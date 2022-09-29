@@ -4,9 +4,17 @@ const express = require("express"),
 //setting view engine to ejs
 app.set("view engine", "ejs");
 
+
+// Static Files
+app.use(express.static('public'))
+
 //route for index page
 app.get("/", function (req, res) {
   res.render("index");
+});
+
+app.get("/article", function (req, res) {
+  res.render("article_page");
 });
 
 
