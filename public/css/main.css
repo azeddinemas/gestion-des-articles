@@ -1,10 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins:ital,wght@0,100;1,100;1,300&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'montserrat'  ;
-}
+
 
 .c-b{
     color: #D05270;;
@@ -12,4 +6,81 @@
 
 .bg-b{
     background-color: #d0526f6b;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+}
+
+.body-blog{
+    margin:20px  40px;
+}
+.article-body{
+    width: 60vw;
+    background-color: rgb(251, 253, 255);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   
+}
+.aside-blog{
+position: fixed;
+width: 25vw !important;
+right: 5vw;
+top: 20vh;
+height: 100vh;
+background: rgb(247, 247, 247);
+}
+
+.recent-post{
+    background: white !important;
+}
+.comment-section{
+    width: 50vw;
+    margin: auto;
+}
+
+.color-gold{
+    font-size: 30px;
+}
+
+.color-gold:hover{
+    color: gold;
+}
+
+.single-commentaire{
+    width: 60vw;
+}
+
+a.nav-link:hover {
+    background-color: #00C1FE;
+    border-radius: 8px;
+    color: white;
+}
+
+#menu {
+    display: none;
+}
+
+#label {
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 46%);
+    display: none;
+}
+
+@media (max-width:991px) {
+    .container-fluid #sid {
+        margin-left: -760px;
+        position: absolute;
+        transition: 0.8s;
+        z-index: 1;
+    }
+    .container-fluid #menu:checked+#sid {
+        margin-left: 0px;
+    }
+    #label {
+        display: block;
+    }
 }
