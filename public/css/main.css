@@ -45,3 +45,33 @@ background: rgb(247, 247, 247);
     width: 60vw;
 }
 
+a.nav-link:hover {
+    background-color: #00C1FE;
+    border-radius: 8px;
+    color: white;
+}
+
+#menu {
+    display: none;
+}
+
+#label {
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 46%);
+    display: none;
+}
+
+@media (max-width:991px) {
+    .container-fluid #sid {
+        margin-left: -760px;
+        position: absolute;
+        transition: 0.8s;
+        z-index: 1;
+    }
+    .container-fluid #menu:checked+#sid {
+        margin-left: 0px;
+    }
+    #label {
+        display: block;
+    }
+}
