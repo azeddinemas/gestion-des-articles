@@ -21,6 +21,13 @@ app.get("/admin", function(req, res) {
     res.render("admin");
 });
 
+app.get("/art", function(req, res) {
+    res.render("Articles");
+});
+app.get("/visiteur", function(req, res) {
+    res.render("visiteur");
+});
+
 
 
 app.listen(port, function() {
