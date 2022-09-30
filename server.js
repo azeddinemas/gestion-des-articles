@@ -1,6 +1,6 @@
 const express = require("express"),
     app = express();
-    const port = 3000;
+const port = 3000;
 
 //setting view engine to ejs
 app.set("view engine", "ejs");
@@ -31,5 +31,5 @@ app.get("/visiteur", function(req, res) {
 
 
 app.listen(port, function() {
-    console.log("Server is running on port 8080 ");
+    console.log("Server is running on port 3000 ");
 });
