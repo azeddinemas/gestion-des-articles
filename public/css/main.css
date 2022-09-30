@@ -28,3 +28,20 @@ background: rgb(247, 247, 247);
 .recent-post{
     background: white !important;
 }
+.comment-section{
+    width: 50vw;
+    margin: auto;
+}
+
+.color-gold{
+    font-size: 30px;
+}
+
+.color-gold:hover{
+    color: gold;
+}
+
+.single-commentaire{
+    width: 60vw;
+}
+
