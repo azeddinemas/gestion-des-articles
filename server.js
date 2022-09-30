@@ -17,6 +17,10 @@ app.get("/article", function (req, res) {
   res.render("article_page");
 });
 
+app.get("/home", function (req, res) {
+  res.render("home");
+});
+
 
 
 app.listen(8080, function () {
