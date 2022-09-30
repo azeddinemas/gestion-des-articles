@@ -1,5 +1,6 @@
 const express = require("express"),
     app = express();
+    const port = 3000;
 
 //setting view engine to ejs
 app.set("view engine", "ejs");
@@ -22,6 +23,6 @@ app.get("/admin", function(req, res) {
 
 
 
-app.listen(8080, function() {
+app.listen(port, function() {
     console.log("Server is running on port 8080 ");
 });
