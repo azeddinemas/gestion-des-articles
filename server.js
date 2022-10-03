@@ -1,6 +1,6 @@
 const express = require("express"),
     app = express();
-    const port = 3000;
+    const port = 8080;
 
 //setting view engine to ejs
 app.set("view engine", "ejs");
@@ -11,25 +11,25 @@ app.use(express.static('public'))
 
 //route for index page
 app.get("/", function(req, res) {
-    res.render("index");
+    res.render("pages/index");
 });
 
 app.get("/article", function(req, res) {
-    res.render("article_page");
+    res.render("pages/article_page");
 });
 app.get("/admin", function(req, res) {
-    res.render("admin");
+    res.render("pages/admin");
 });
 
 app.get("/art", function(req, res) {
-    res.render("Articles");
+    res.render("pages/Articles");
 });
 app.get("/visiteur", function(req, res) {
-    res.render("visiteur");
+    res.render("pages/visiteur");
 });
 
 app.get("/home", function (req, res) {
-  res.render("home");
+  res.render("pages/home");
 });
 
 
