@@ -28,7 +28,10 @@ app.get("/visiteur", function(req, res) {
     res.render("pages/visiteur");
 });
 app.get("/categorie", function(req, res) {
-        res.render('pages/categories');
+    res.render('pages/categories');
+})
+app.get("/commentair", function(req, res) {
+        res.render('pages/commentair')
     })
     // end  admin
 app.get("/home", function(req, res) {
