@@ -1,10 +1,14 @@
+.c-b {
+    color: #D05270;
+    ;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-*{
+* {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-
 }
 
 .c-b{
@@ -17,38 +21,40 @@
 .body-blog{
     margin:20px  40px;
 }
-.article-body{
+
+.article-body {
     width: 60vw;
     background-color: rgb(251, 253, 255);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-   
-}
-.aside-blog{
-position: fixed;
-width: 25vw !important;
-right: 5vw;
-top: 20vh;
-height: 100vh;
-background: rgb(247, 247, 247);
 }
 
-.recent-post{
+.aside-blog {
+    position: fixed;
+    width: 25vw !important;
+    right: 5vw;
+    top: 20vh;
+    height: 100vh;
+    background: rgb(247, 247, 247);
+}
+
+.recent-post {
     background: white !important;
 }
-.comment-section{
+
+.comment-section {
     width: 50vw;
     margin: auto;
 }
 
-.color-gold{
+.color-gold {
     font-size: 30px;
 }
 
-.color-gold:hover{
+.color-gold:hover {
     color: gold;
 }
 
-.single-commentaire{
+.single-commentaire {
     width: 60vw;
 }
 

@@ -1,6 +1,6 @@
 const express = require("express"),
     app = express();
-    const port = 8080;
+const port = 3000;
 
 //setting view engine to ejs
 app.set("view engine", "ejs");
@@ -13,12 +13,12 @@ app.use(express.static('public'))
 app.get("/", function(req, res) {
     res.render("pages/index");
 });
-
+// start admin
 app.get("/article", function(req, res) {
     res.render("pages/article_page");
 });
-app.get("/admin", function(req, res) {
-    res.render("pages/admin");
+app.get("/dashboard", function(req, res) {
+    res.render("dashboard");
 });
 
 app.get("/art", function(req, res) {
@@ -27,13 +27,16 @@ app.get("/art", function(req, res) {
 app.get("/visiteur", function(req, res) {
     res.render("pages/visiteur");
 });
-
-app.get("/home", function (req, res) {
-  res.render("pages/home");
+app.get("/categorie", function(req, res) {
+        res.render('categories');
+    })
+    // end  admin
+app.get("/home", function(req, res) {
+    res.render("home");
 });
 
 
 
 app.listen(port, function() {
-    console.log("Server is running on port 8080 ");
+    console.log("Server is running on port 3000 ");
 });
