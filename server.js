@@ -29,11 +29,11 @@ app.get("/visiteur", function(req, res) {
 });
 app.get("/categorie", function(req, res) {
     res.render('pages/categories');
-})
+});
 app.get("/commentair", function(req, res) {
-        res.render('pages/commentair')
-    })
-    // end  admin
+    res.render('pages/commentair')
+});
+// end  admin
 app.get("/home", function(req, res) {
     res.render("pages/home");
 });
