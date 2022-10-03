@@ -13,12 +13,12 @@ app.use(express.static('public'))
 app.get("/", function(req, res) {
     res.render("index");
 });
-
+// start admin
 app.get("/article", function(req, res) {
     res.render("article_page");
 });
-app.get("/admin", function(req, res) {
-    res.render("admin");
+app.get("/dashboard", function(req, res) {
+    res.render("dashboard");
 });
 
 app.get("/art", function(req, res) {
@@ -27,9 +27,12 @@ app.get("/art", function(req, res) {
 app.get("/visiteur", function(req, res) {
     res.render("visiteur");
 });
-
-app.get("/home", function (req, res) {
-  res.render("home");
+app.get("/categorie", function(req, res) {
+        res.render('categories');
+    })
+    // end  admin
+app.get("/home", function(req, res) {
+    res.render("home");
 });
 
 
