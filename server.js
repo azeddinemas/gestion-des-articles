@@ -18,7 +18,7 @@ app.get("/article", function(req, res) {
     res.render("pages/article_page");
 });
 app.get("/dashboard", function(req, res) {
-    res.render("dashboard");
+    res.render("pages/dashboard");
 });
 
 app.get("/art", function(req, res) {
@@ -28,11 +28,11 @@ app.get("/visiteur", function(req, res) {
     res.render("pages/visiteur");
 });
 app.get("/categorie", function(req, res) {
-        res.render('categories');
+        res.render('pages/categories');
     })
     // end  admin
 app.get("/home", function(req, res) {
-    res.render("home");
+    res.render("pages/home");
 });
 
 
