@@ -11,28 +11,28 @@ app.use(express.static('public'))
 
 //route for index page
 app.get("/", function(req, res) {
-    res.render("index");
+    res.render("pages/index");
 });
 // start admin
 app.get("/article", function(req, res) {
-    res.render("article_page");
+    res.render("pages/article_page");
 });
 app.get("/dashboard", function(req, res) {
     res.render("dashboard");
 });
 
 app.get("/art", function(req, res) {
-    res.render("Articles");
+    res.render("pages/Articles");
 });
 app.get("/visiteur", function(req, res) {
-    res.render("visiteur");
+    res.render("pages/visiteur");
 });
 app.get("/categorie", function(req, res) {
         res.render('categories');
     })
     // end  admin
 app.get("/home", function(req, res) {
-    res.render("home");
+    res.render("pages/home");
 });
 
 

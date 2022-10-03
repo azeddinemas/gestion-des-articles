@@ -11,8 +11,15 @@
     overflow-x: hidden;
 }
 
-.body-blog {
-    margin: 20px 40px;
+.c-b{
+    color: #D05270;
+}
+
+.bg-b{
+    background-color: #d0526f6b;
+}
+.body-blog{
+    margin:20px  40px;
 }
 
 .article-body {
