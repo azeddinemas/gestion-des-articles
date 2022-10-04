@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
  const db = require('./config/dbConfig')
 
+ app.use(express.static('public'))
 
 
 
@@ -11,7 +12,7 @@ app.use(express.urlencoded({ extended: true }))
 
 // routers
 const router = require('./routes/postRouter')
-app.use('/api/posts', router)
+app.use('/', router)
 
 //port
 

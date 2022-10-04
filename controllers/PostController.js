@@ -1,4 +1,6 @@
 const post = require('../models/PostModel');
+const express = require('express');
+const app = express()
 
 const AddPost = (req,res)=> {
 
@@ -11,7 +13,11 @@ const AddPost = (req,res)=> {
     .catch(()=>{res.json({msg: 'error '})})
 }
 
+
+
+
+
 /* Exporting the function `AddPost` so that it can be used in other files. */
 module.exports = {
-    AddPost
+    AddPost,
 }
