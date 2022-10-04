@@ -8,6 +8,10 @@ const route = Router()
 
 route.post('/addpost', post.AddPost );
 route.get('/', home.index );
+route.get('/dashboard', home.dashboard );
+route.get('/categories', home.categories );
+route.get('/articles', home.articles );
+
 
 
 module.exports = route
