@@ -1,45 +1,33 @@
-const express = require("express"),
-    app = express();
-const port = 3000;
-
-//setting view engine to ejs
-app.set("view engine", "ejs");
-
-
-// Static Files
-app.use(express.static('public'))
-
-//route for index page
-app.get("/", function(req, res) {
-    res.render("pages/index");
-});
-// start admin
-app.get("/article", function(req, res) {
-    res.render("pages/article_page");
-});
-app.get("/dashboard", function(req, res) {
-    res.render("pages/dashboard");
-});
-
-app.get("/art", function(req, res) {
-    res.render("pages/Articles");
-});
-app.get("/visiteur", function(req, res) {
-    res.render("pages/visiteur");
-});
-app.get("/categorie", function(req, res) {
-    res.render('pages/categories');
-});
-app.get("/commentair", function(req, res) {
-    res.render('pages/commentair')
-});
-// end  admin
-app.get("/home", function(req, res) {
-    res.render("pages/home");
-});
+const express = require("express");
+const app = express();
+ const db = require('./config/dbConfig')
 
 
 
-app.listen(port, function() {
-    console.log("Server is running on port 3000 ");
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
+
+// routers
+const router = require('./routes/postRouter')
+app.use('/api/posts', router)
+
+//port
+
+const PORT = 3000;
+
+//server
+
+app.listen(PORT, () => {
+  console.log(`server is running on port ${PORT}`);
 });
+
+
+db.sync().then(() => {
+    console.log('Connection has been established successfully.');
+ }).catch((error) => {
+    console.error('Unable to connect to the database: ', error);
+ });
+
+ 
