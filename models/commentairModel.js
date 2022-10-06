@@ -3,10 +3,10 @@ const { DataTypes } = require('sequelize');
 
 const commentair = db.define("commentair", {
     name: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING
     },
     commentair: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING
     }
 });
 
