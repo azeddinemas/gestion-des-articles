@@ -17,11 +17,10 @@
            <div class="row">
             <select class="m-4 p-2 col-sm-4" aria-label="Default select example" name="categorie"  id="myselect">
                 <option class="" value="cat1"> Pick a Categorie </option>
-                
-                    <% cat.forEach(function(cate) { %>
-                        <option class="" value="<%= student.name %>"> <%= cate.title %> </option>
+                <% cat.forEach(function(student) { %>
+                    <option class="" value="<%= student.title %>"> <%= student.title %> </option>
 
-                    <% }); %> 
+                 <% }); %> 
                    
             </select>
            </div>

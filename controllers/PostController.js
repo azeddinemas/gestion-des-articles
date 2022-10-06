@@ -1,5 +1,7 @@
 const post = require('../models/PostModel');
 const cats = require('../controllers/CategorieController')
+const categorie = require('../models/CategorieModel');
+
 const express = require('express');
 const app = express()
 
@@ -23,7 +25,9 @@ const GetAllPost = (req,res)=>{
 }
 
 const newPost = (req,res)=>{
-    res.render('../views/pages/addPost.ejs' , cat = cats )
+   const cats =  categorie.findAll({attributes: ['title']})
+   .then((cats)=>{  res.render("../views/pages/addPost.ejs", cat = cats ); })
+   .catch(()=>{res.json({msg: 'error '})})
 }
 
 
