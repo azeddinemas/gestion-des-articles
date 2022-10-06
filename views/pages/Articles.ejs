@@ -5,10 +5,11 @@
             <div class="col-md d-flex justify-content-between">
                 <div class="">
                     <h3>Article List</h3>
+                
                 </div>
                 <div class="">
                     <img class="" src="images/scroll.svg" alt="">
-                    <a href="#" class="btn btn-info text-white ">Add new article</a>
+                    <a href="http://localhost:3000/addpost" class="btn btn-info text-white ">Add new article</a>
                 </div>
             </div>
         </div>
@@ -24,33 +25,19 @@
                     </tr>
                 </thead>
                 <tbody class="bg-white">
+                    <% posts.forEach(function(post) { %>
+
                     <tr class="align-middle">
-                        <th scope="row">Antigone</th>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. A ad maiores ut,</td>
-                        <td>axpression</td>
+                        <th scope="row"><%= post.title %></th>
+                        <td><%= post.body %></td>
+                        <td><%= post.categorie %></td>
                         <td class="d-flex flex-row justify-content-end gap-1">
                             <button class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
                             <button class="btn btn-outline-primary">Update</button>
                         </td>
+                        <% }); %> 
                     </tr>
-                    <tr class="align-middle">
-                        <th scope="row">Antigone</th>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. A ad maiores ut,</td>
-                        <td>axpression</td>
-                        <td class="d-flex flex-row justify-content-end gap-1">
-                            <button class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
-                            <button class="btn btn-outline-primary">Update</button>
-                        </td>
-                    </tr>
-                    <tr class="align-middle">
-                        <th scope="row">Antigone</th>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. A ad maiores ut,</td>
-                        <td>axpression</td>
-                        <td class="d-flex flex-row justify-content-end gap-1">
-                            <button class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
-                            <button class="btn btn-outline-primary">Update</button>
-                        </td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </div>

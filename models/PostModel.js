@@ -8,6 +8,11 @@ const {Sequelize, DataTypes } = require('sequelize');
         body: {
             type: DataTypes.TEXT
         },
+
+        categorie: {
+            type: DataTypes.STRING
+        },
+       
        
     
     })
