@@ -1,6 +1,5 @@
-const db = require('../models/commentairModel');
-const express = require('express');
-const app = express();
+const commentair = require('../models/commentairModel');
+
 
 
 const Addcommentair = (req, res) => {
@@ -10,11 +9,14 @@ const Addcommentair = (req, res) => {
         .catch(() => { res.json({ msg: 'error' }) })
 }
 
-const getAll = (req, res) => {
-    commentair.findAll().then(comments => {
-        res.json({ comments })
-    })
+const getall = (req, res) => {
+    const comments = commentair.findAll({ attributes: ['id', 'name', 'commentair'] })
+        .then((comments) => { res.render("../views/pages/commentair.ejs", commentes = comments) })
+        .catch(() => { res.json({ msg: 'error' }) })
+
+
 }
+
 
 const deletecom = (req, res) => {
     const { id } = req.body;
@@ -25,4 +27,4 @@ const deletecom = (req, res) => {
     })
 }
 
-module.exports = { Addcommentair, getAll, deletecom }
+module.exports = { Addcommentair, getall, deletecom }
