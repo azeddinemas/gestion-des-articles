@@ -9,15 +9,15 @@ const AddPost = (req,res)=> {
 
 /* Creating a new post and then returning a message if it was successful or not. */
     post.create( {...body})
-    .then(()=>{res.redirect()})
+    .then(()=>{res.redirect('http://localhost:3000/articles')})
     .catch(()=>{res.json({msg: 'error '})})
 }
 
 
 
 const GetAllPost = (req,res)=>{
-    const allPosts =  post.findAll({attributes: ['title', 'body']})
-    .then((allPosts)=>{res.json(allPosts)})
+    const allPosts =  post.findAll({attributes: ['title', 'body' , 'categorie']})
+    .then((allPosts)=>{res.render("../views/pages/Articles.ejs" , posts = allPosts); })
     .catch(()=>{res.json({msg: 'error '})})
 }
 
