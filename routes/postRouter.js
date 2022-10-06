@@ -5,6 +5,7 @@ const {Router} = require('express');
 const app = require('express')();
 
 
+
 const route = Router()
 
 route.post('/addpost', post.AddPost );
@@ -15,6 +16,8 @@ route.get('/articles', home.articles );
 route.get('/getAllcategorie', categorie.getAllCategorie );
 route.post('/addcategorie', categorie.AddCategorie );
 
+route.get('/articles', post.GetAllPost );
+route.get('/addpost', home.addPost );
 
 
 
