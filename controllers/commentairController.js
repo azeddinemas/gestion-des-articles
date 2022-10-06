@@ -1,6 +1,5 @@
 const db = require('../models/commentairModel');
 const express = require('express');
-const commentair = require('../models/commentairModel');
 const app = express();
 
 
@@ -11,7 +10,7 @@ const Addcommentair = (req, res) => {
         .catch(() => { res.json({ msg: 'error' }) })
 }
 
-const getall = (req, res) => {
+const getAll = (req, res) => {
     commentair.findAll().then(comments => {
         res.json({ comments })
     })
@@ -26,4 +25,4 @@ const deletecom = (req, res) => {
     })
 }
 
-module.exports = { Addcommentair, getall, deletecom }
+module.exports = { Addcommentair, getAll, deletecom }
