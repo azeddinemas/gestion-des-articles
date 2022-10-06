@@ -20,6 +20,12 @@ const articles = (req,res)=> {
     res.render("../views/pages/Articles.ejs"); 
 };
 
+const addPost = (req,res)=> {
+    res.render("../views/pages/addPost.ejs"); 
+};
+
+
+
 
 
 
@@ -33,4 +39,5 @@ module.exports = {
     dashboard,
     categories,
     articles,
+    addPost,
 }

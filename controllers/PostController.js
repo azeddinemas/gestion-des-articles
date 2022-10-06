@@ -9,7 +9,15 @@ const AddPost = (req,res)=> {
 
 /* Creating a new post and then returning a message if it was successful or not. */
     post.create( {...body})
-    .then(()=>{res.json({msg: 'Article was added seccusefully'})})
+    .then(()=>{res.redirect()})
+    .catch(()=>{res.json({msg: 'error '})})
+}
+
+
+
+const GetAllPost = (req,res)=>{
+    const allPosts =  post.findAll({attributes: ['title', 'body']})
+    .then((allPosts)=>{res.json(allPosts)})
     .catch(()=>{res.json({msg: 'error '})})
 }
 
@@ -20,4 +28,5 @@ const AddPost = (req,res)=> {
 /* Exporting the function `AddPost` so that it can be used in other files. */
 module.exports = {
     AddPost,
+    GetAllPost,
 }
