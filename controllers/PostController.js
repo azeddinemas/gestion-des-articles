@@ -1,4 +1,7 @@
 const post = require('../models/PostModel');
+const cats = require('../controllers/CategorieController')
+const categorie = require('../models/CategorieModel');
+
 const express = require('express');
 const app = express()
 
@@ -16,12 +19,16 @@ const AddPost = (req,res)=> {
 
 
 const GetAllPost = (req,res)=>{
-    const allPosts =  post.findAll({attributes: ['title', 'body' , 'categorie']})
-    .then((allPosts)=>{res.render("../views/pages/Articles.ejs" , posts = allPosts); })
+    const allPosts =  post.findAll({attributes: ['title', 'body','categorie' ]})
+    .then((allPosts)=>{res.render("../views/pages/Articles.ejs", posts = allPosts ); })
     .catch(()=>{res.json({msg: 'error '})})
 }
 
-
+const newPost = (req,res)=>{
+   const cats =  categorie.findAll({attributes: ['title']})
+   .then((cats)=>{  res.render("../views/pages/addPost.ejs", cat = cats ); })
+   .catch(()=>{res.json({msg: 'error '})})
+}
 
 
 
@@ -29,4 +36,5 @@ const GetAllPost = (req,res)=>{
 module.exports = {
     AddPost,
     GetAllPost,
+    newPost,
 }

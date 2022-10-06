@@ -1,6 +1,5 @@
 const categorie = require('../models/CategorieModel');
 const express = require('express');
-const Categorie = require('../models/CategorieModel');
 const app = express()
 
 const AddCategorie = (req,res)=> {
@@ -31,5 +30,5 @@ const getAllCategorie = (req,res) => {
 
 
 module.exports = {
-    AddCategorie, getAllCategorie, UpdateCategorie, DeleteCategorie
+    AddCategorie, getAllCategorie, 
 }
