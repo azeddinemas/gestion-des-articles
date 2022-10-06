@@ -1,15 +1,12 @@
 const db = require('../config/dbConfig');
 const {Sequelize, DataTypes } = require('sequelize');
-    const Post = db.define("post", {
+    const Categorie = db.define("categorie", {
        
         title: {
             type: DataTypes.STRING,
         },
-        body: {
-            type: DataTypes.TEXT
-        },
-           
+    
     })
 
 
-    module.exports = Post;
+    module.exports = Categorie;
