@@ -1,6 +1,5 @@
 const categorie = require('../models/CategorieModel');
 const express = require('express');
-const Categorie = require('../models/CategorieModel');
 const app = express()
 
 

@@ -23,28 +23,22 @@
                     </tr>
                 </thead>
                 <tbody class="bg-white">
-                    <tr class="align-middle">
-                        <th scope="row">john</th>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque fugiat fuga</td>
-                        <td class="d-flex flex-row justify-content-end">
-                            <button class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr class="align-middle">
-                        <th scope="row">john</th>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque fugiat fuga</td>
-                        <td class="d-flex flex-row justify-content-end">
-                            <button class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-                    <tr class="align-middle">
-                        <th scope="row">john</th>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque fugiat fuga</td>
-                        <td class="d-flex flex-row justify-content-end">
-                            <button class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
-                        </td>
-                    </tr>
-
+                    <% commentes.forEach(function (commentair){%>
+                        <tr class="align-middle">
+                            <th scope="row">
+                                <%= commentair.id %>
+                            </th>
+                            <th scope="row">
+                                <%= commentair.name %>
+                            </th>
+                            <td>
+                                <%= commentair.commentair %>
+                            </td>
+                            <td class="d-flex flex-row justify-content-end">
+                                <button class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
+                            </td>
+                        </tr>
+                        <% });%>
                 </tbody>
             </table>
         </div>

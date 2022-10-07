@@ -5,10 +5,11 @@
             <div class="col-md d-flex justify-content-between">
                 <div class="">
                     <h3>Article List</h3>
+                
                 </div>
                 <div class="">
                     <img class="" src="images/scroll.svg" alt="">
-                    <a href="#" class="btn btn-info text-white ">Add new article</a>
+                    <a href="http://localhost:3000/addpost" class="btn btn-info text-white ">Add new article</a>
                 </div>
             </div>
         </div>
@@ -23,34 +24,29 @@
                         <th class="text-center">operation</th>
                     </tr>
                 </thead>
+
                 <tbody class="bg-white">
-                    <tr class="align-middle">
-                        <th scope="row">Antigone</th>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. A ad maiores ut,</td>
-                        <td>axpression</td>
+
+                    <% posts.forEach(function(post) { %>
+                        
+                        <th scope="row"><%= post.title %></th>
+                        <td><%= post.body %></td>
+                        <td><%= post.categorie %></td>
                         <td class="d-flex flex-row justify-content-end gap-1">
-                            <button class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
-                            <button class="btn btn-outline-primary">Update</button>
+                    <form action="/articles/<%= post.id %>" class="mt-5" method="post">
+                        <button type="submit" value=""  class="btn btn-outline-danger"><i class="bi bi-trash">Delete</i></button>
+                    </form>
+
+                    <form action="/articles/update/<%= post.id %>" class="mt-5" method="post">
+                        <button type="submit" class="btn btn-outline-primary">Update</button>
+                    </form>
+                    
+
+
                         </td>
                     </tr>
-                    <tr class="align-middle">
-                        <th scope="row">Antigone</th>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. A ad maiores ut,</td>
-                        <td>axpression</td>
-                        <td class="d-flex flex-row justify-content-end gap-1">
-                            <button class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
-                            <button class="btn btn-outline-primary">Update</button>
-                        </td>
-                    </tr>
-                    <tr class="align-middle">
-                        <th scope="row">Antigone</th>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. A ad maiores ut,</td>
-                        <td>axpression</td>
-                        <td class="d-flex flex-row justify-content-end gap-1">
-                            <button class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
-                            <button class="btn btn-outline-primary">Update</button>
-                        </td>
-                    </tr>
+                        <% }); %> 
+                    
                 </tbody>
             </table>
         </div>
@@ -59,6 +55,85 @@
     </div>
     </div>
     </main>
+
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="add-student.php" method="POST">
+
+
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="Name" class="form-control" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="Email" class="form-control" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone</label>
+                    <input type="text" class="form-control" name="phone" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Enroll Number</label>
+                    <input type="text" class="form-control" name="number" required>
+                </div>
+
+             
+
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </form>      
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     </body>
 
