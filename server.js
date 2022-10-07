@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
- const db = require('./config/dbConfig')
+const db = require('./config/dbConfig')
 
- app.use(express.static('public'))
+app.use(express.static('public'))
 
 
 
@@ -21,14 +21,12 @@ const PORT = 3000;
 //server
 
 app.listen(PORT, () => {
-  console.log(`server is running on port ${PORT}`);
+    console.log(`server is running on port ${PORT}`);
 });
 
 
 db.sync().then(() => {
     console.log('Connection has been established successfully.');
- }).catch((error) => {
+}).catch((error) => {
     console.error('Unable to connect to the database: ', error);
- });
-
- 
+});
