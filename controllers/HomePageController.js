@@ -24,6 +24,9 @@ const addPost = (req,res)=> {
     res.render("../views/pages/addPost.ejs"); 
 };
 
+const posts = (req,res)=> {
+    res.render("../views/pages/postpage.ejs"); 
+};
 
 
 
@@ -40,4 +43,5 @@ module.exports = {
     categories,
     articles,
     addPost,
+    posts,
 }

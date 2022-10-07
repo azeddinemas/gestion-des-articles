@@ -6,11 +6,7 @@ const express = require('express');
 const app = express()
 
 const AddPost = (req,res)=> {
-
- /* Destructuring the body of the request. */
  const {body}= req
-
-/* Creating a new post and then returning a message if it was successful or not. */
     post.create( {...body})
     .then(()=>{res.redirect('http://localhost:3000/articles')})
     .catch(()=>{res.json({msg: 'error '})})
@@ -19,10 +15,11 @@ const AddPost = (req,res)=> {
 
 
 const GetAllPost = (req,res)=>{
-    const allPosts =  post.findAll({attributes: ['title', 'body','categorie' ]})
-    .then((allPosts)=>{res.render("../views/pages/Articles.ejs", posts = allPosts ); })
+    const allPosts =  post.findAll({attributes: ['title', 'body','categorie' , 'id' ]})
+    .then((allPosts)=>{res.render("../views/pages/Articles.ejs" , posts = allPosts ); })
     .catch(()=>{res.json({msg: 'error '})})
 }
+
 
 const newPost = (req,res)=>{
    const cats =  categorie.findAll({attributes: ['title']})
@@ -31,10 +28,49 @@ const newPost = (req,res)=>{
 }
 
 
+const deletePost = async (req,res)=>{
+    const {id} = req.params
+       
+      
+        post.destroy({
+          where: { id: id }
+        })
+          .then(num => {
+            if (num == 1) {
+                res.redirect('http://localhost:3000/articles')
+            
+            } else {
+              res.send({
+                message: `Cannot delete Post with id=${id}. Maybe Tutorial was not found!`
+              });
+            }
+          })
+          .catch(err => {
+            res.status(500).send({
+              message: "Could not delete Post with id=" + id
+            });
+          });
+      
+}
+
+const updatePost = async(req,res)=>{
+    let id = req.body
+
+    const posts = await post.update(req.body, {where:{id:id}})
+
+    res.status(200).send(posts)
+}
+
+
+
+
+
+
 
 /* Exporting the function `AddPost` so that it can be used in other files. */
 module.exports = {
     AddPost,
     GetAllPost,
     newPost,
+    deletePost,
 }
