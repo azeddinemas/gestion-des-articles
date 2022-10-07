@@ -25,6 +25,7 @@ const addPost = (req, res) => {
 };
 
 
+
 const visiteur = (req, res) => {
     res.render('../views/pages/visiteur.ejs')
 }
