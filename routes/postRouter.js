@@ -15,25 +15,25 @@ route.post("/articles/:id", post.deletePost);
 route.get("/", home.index);
 route.get("/dashboard", home.dashboard);
 
-route.post('/addpost', post.AddPost );
-route.get('/', home.index );
-route.get('/dashboard', home.dashboard );
+route.post('/addpost', post.AddPost);
+route.get('/', home.index);
+route.get('/dashboard', home.dashboard);
 
-route.get('/articles', home.articles );
-route.get('/articles', post.GetAllPost );
-route.get('/addpost', home.addPost );
+route.get('/articles', home.articles);
+route.get('/articles', post.GetAllPost);
+route.get('/addpost', home.addPost);
 
 
 // route.get('/getAllcategorie', categorie.getAllCategorie );
-route.post('/categories', categorie.AddCategorie );
-route.get('/categories', categorie.getAllCategorie );
+route.post('/categories', categorie.AddCategorie);
+route.get('/categories', categorie.getAllCategorie);
 route.post('/categories/:id', categorie.deletecategorie)
 route.post('/categorie/:id', categorie.getonecategorie)
 
-
-// commentair
+route.get('/postpage', home.postPage)
+    // commentair
 route.get('/commentaire', commentair.getall);
 route.post('/addCom', commentair.Addcommentair);
-route.post('/deleteComm', commentair.deletecom);
+route.post('/deleteComm/:id', commentair.deletecom);
 
 module.exports = route

@@ -35,7 +35,10 @@
                                 <%= commentair.commentair %>
                             </td>
                             <td class="d-flex flex-row justify-content-end">
-                                <button class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                <form action="/deleteComm/<%= commentair.id %> " method="post">
+                                    <button class="btn btn-outline-danger"><i class="bi bi-trash"></i></button>
+                                </form>
+
                             </td>
                         </tr>
                         <% });%>
