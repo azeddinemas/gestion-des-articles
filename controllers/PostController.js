@@ -35,35 +35,37 @@ const deletePost = async (req,res)=>{
         post.destroy({
           where: { id: id }
         })
-          .then(num => {
-            if (num == 1) {
-                res.redirect('http://localhost:3000/articles')
-            
-            } else {
-              res.send({
-                message: `Cannot delete Post with id=${id}. Maybe Tutorial was not found!`
-              });
-            }
-          })
-          .catch(err => {
-            res.status(500).send({
-              message: "Could not delete Post with id=" + id
-            });
-          });
+        .then((cats)=>{  res.redirect('http://localhost:3000/articles')})
+        .catch(()=>{res.json({msg: 'error '})})
       
 }
 
-const updatePost = async(req,res)=>{
-    let id = req.body
 
-    const posts = await post.update(req.body, {where:{id:id}})
 
-    res.status(200).send(posts)
+const updatePost = (req,res)=>{
+  const {id} = req.params
+ const num = post.findOne({ where: { id: id } })  
+  .then((num)=>{  res.render("../views/pages/updatePost.ejs", {num} ); })
+   .catch(()=>{res.json({msg: 'error '})})
 }
 
 
+// const insertPost = (req,res)=>{
+//   const {id} = req.params
+//   post.update({...body},{where:{id:id}})
+//   .then((id)=>{ res.redirect('http://localhost:3000/articles') })
+//   .catch(()=>{res.json({msg: 'error '})})
+// }
 
 
+const simo = (req,res)=>{
+
+const {body}= req
+    let {id}= req.params
+    post.update( {...body}, {where:{id:id}})
+    .then(()=>{res.redirect('http://localhost:3000/articles')})
+    .catch(()=>{res.json({msg: body})})
+}
 
 
 
@@ -73,4 +75,6 @@ module.exports = {
     GetAllPost,
     newPost,
     deletePost,
+    updatePost,
+    simo,
 }

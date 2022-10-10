@@ -17,5 +17,10 @@ route.get("/categories", home.categories);
 route.get("/getAllcategorie", categorie.getAllCategorie);
 route.post("/addcategorie", categorie.AddCategorie);
 
+route.get('/update/:id', post.updatePost)
+route.post('/update/:id', post.simo)
+
+
+
 
 module.exports = route;
