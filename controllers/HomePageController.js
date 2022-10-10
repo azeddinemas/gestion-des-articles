@@ -33,6 +33,10 @@ const commentair = (req, res) => {
     res.render('../views/pages/commentair.ejs')
 }
 
+const postPage = (req, res) => {
+    res.render('../views/pages/postPage.ejs')
+}
+
 
 
 
@@ -51,4 +55,5 @@ module.exports = {
     addPost,
     visiteur,
     commentair,
+    postPage
 }
