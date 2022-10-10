@@ -23,6 +23,11 @@ route.get('/articles', home.articles);
 route.get('/articles', post.GetAllPost);
 route.get('/addpost', home.addPost);
 
+route.get('/update/:id', post.updatePost)
+route.post('/update/:id', post.simo)
+
+
+
 
 // route.get('/getAllcategorie', categorie.getAllCategorie );
 route.post('/categories', categorie.AddCategorie);

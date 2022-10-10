@@ -1,0 +1,41 @@
+<%- include('../partials/sidebar'); %>
+
+    <div class="container row">
+   
+                    <form  method="post" class="col-8">
+                        <div class="mb-3">
+                            <label class="form-label">Post Title</label>
+                            <input type="text" class="form-control" name="title" value="<%= num.title %>">
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="body" id="" cols="105" rows="10"><%= num.body %></textarea>
+
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Post Categorie</label>
+                            <input type="text" class="form-control" name="categorie" value="<%= num.categorie %>">
+                        </div>
+                     
+                        <div class="d-flex p-3">
+                            <button type="submit" class="  btn  btn-danger w-50 me-5">Update Article</button>
+                            <a class="btn btn-primary"  href="http://localhost:3000/articles">Back to Posts Page</a>
+                       </div>
+                    </form>
+                </div>
+
+
+
+        
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+
+
+
