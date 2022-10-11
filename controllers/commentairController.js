@@ -3,14 +3,14 @@ const commentair = require('../models/commentairModel');
 
 
 const Addcommentair = (req, res) => {
-    const { body } = req;
+    const body = req.body;
     commentair.create({...body })
         .then(() => { res.redirect('http://localhost:3000/postpage') })
         .catch(() => { res.json({ msg: 'error' }) })
 }
 const getall = (req, res) => {
-    const comments = commentair.findAll({ attributes: ['id', 'name', 'commentair'] })
-        .then((comments) => { res.render("../views/pages/commentair.ejs", commentes = comments) })
+    commentair.findAll()
+        .then((commentes) => { res.render("../views/pages/commentair.ejs", { commentes }) })
         .catch(() => { res.json({ msg: 'error' }) })
 
 
