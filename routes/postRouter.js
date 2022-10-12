@@ -24,14 +24,18 @@ route.get('/articles', post.GetAllPost );
 route.get('/addpost', home.addPost );
 
 
-// route.get('/getAllcategorie', categorie.getAllCategorie );
-route.post('/categories', categorie.AddCategorie );
+//categorie
+
+
 route.get('/categories', categorie.getAllCategorie );
+route.post('/categories', categorie.AddCategorie );
 route.post('/categories/:id', categorie.deletecategorie)
-route.post('/categorie/:id', categorie.getonecategorie)
+route.get('/updatecategorie/:id', categorie.getonecategorie)
+route.post('/updatecategorie/:id', categorie.updatecategorie)
 
 
 // commentair
+
 route.get('/commentaire', commentair.getall);
 route.post('/addCom', commentair.Addcommentair);
 route.post('/deleteComm', commentair.deletecom);
